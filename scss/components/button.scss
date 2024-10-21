@@ -1,0 +1,29 @@
+.button {
+    &-blue {
+        color: $secondary-color;
+        background-color: $blue-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        padding: .75rem 2rem;
+        width: fit-content;
+        font-size: rem(15);
+        font-weight: 600;
+        border: rem(2) solid $blue-color;
+        &, svg {
+            transition: all ease-in-out .15s;
+        }
+        svg {
+            fill: $secondary-color;
+        }
+        &:hover {
+            background-color: $secondary-color;
+            color: $blue-color;
+            text-decoration: none;
+            svg {
+                fill: $blue-color;
+            }
+        }
+    }
+}

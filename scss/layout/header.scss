@@ -1,0 +1,101 @@
+.header {
+    position: relative;
+    &-main {
+        padding: 1rem 0;
+        &-nav {
+            padding: 0;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: nowrap;
+            position: relative;
+            @media (max-width: $xxl) and (min-width: $lg) {
+                flex-wrap: wrap;
+            }
+        }
+        &-menu {
+            justify-content: center;
+            @media (max-width: $xxl) {
+                order: 2;
+            }
+            @media (max-width: $lg) {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                margin-top: 1rem;
+            }
+            ul {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: .5rem 2rem;
+                @media (max-width: $xxl) {
+                    width: 100%;
+                    justify-content: flex-start;
+                }
+                @media (max-width: $lg) {
+                    background-color: rgba($primary-color, .75);
+                    flex-direction: column;
+                    padding: 1.5rem;
+                }
+            }
+            &-link {
+                font-size: rem(16);
+                line-height: rem(22);
+                color: $primary-color;
+                font-weight: bold;
+                position: relative;
+                transition: .15s;
+                &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    bottom: -2px;
+                    left: 0;
+                    height: 2px;
+                    width: 0;
+                    background-color: $blue-color;
+                    transition: .15s;
+                }
+                &:hover, &.active {
+                    text-decoration: none;
+                    color: $blue-color;
+                    &::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        &-contact {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            border-left: rem(1) solid $border-color;
+            padding: .75rem 0 .75rem 2rem;
+            &-icon {
+                border: rem(2) solid $blue-color;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: .75rem;
+                width: rem(48);
+                height: rem(48);
+                img, svg {
+                    object-fit: scale-down;
+                    margin-right: rem(-2);
+                }
+            }
+            &-content {
+                a {
+                    display: block;
+                    font-weight: 600;
+                    line-height: 1.35;
+                }
+            }
+            &-phone {
+                color: $primary-color;
+            }
+        }
+    }
+}

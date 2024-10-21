@@ -1,0 +1,59 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font;
+  color: $primary-color;
+  font-weight: 700;
+}
+body {
+  font-family: $font2;
+  font-size: rem(16);
+  line-height: rem(30);
+  font-weight: 400;
+  color: $tertiary-color;
+}
+h1 {
+  font-size: rem(68);
+  line-height: rem(80);
+  margin-bottom: 2.5rem;
+}
+h2 {
+  font-size: rem(48);
+  line-height: rem(60);
+  margin-bottom: 2.5rem;
+}
+h3 {
+  font-size: rem(32);
+  line-height: rem(40);
+  margin-bottom: 2.25rem;
+}
+h4 {
+  font-size: rem(28);
+  line-height: rem(34);
+}
+h5 {
+  font-size: rem(22);
+  line-height: rem(28);
+}
+h6 {
+  font-size: rem(17);
+  line-height: rem(23);
+}
+@media (min-width: $xxl) {
+  .container {
+    max-width: 1424px;
+  }
+}
+a {
+  text-decoration: none;
+  color: $blue-color;
+  &:hover {
+    color: $blue-color;
+    text-decoration: underline;
+  }
+}
+p:not(:last-child) {
+  margin-bottom: 1rem;
+}
+strong, b {
+  color: $primary-color;
+  font-weight: 600;
+}

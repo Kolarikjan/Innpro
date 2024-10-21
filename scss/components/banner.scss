@@ -1,0 +1,108 @@
+.banner {
+    position: relative;
+    .owl {
+        &-dots {
+            position: absolute;
+            z-index: 2;
+            right: 2.25rem;
+            bottom: 2.25rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: .65rem;
+            @media (max-width: $md) {
+                right: 1.5rem;
+                bottom: 1.5rem;
+                gap: .35rem;
+            }
+        }
+        &-dot {
+            border: 2px solid transparent;
+            border-radius: 50%;
+            span {
+                display: block;
+                width: 10px;
+                aspect-ratio: 1/1;
+                border-radius: 50%;
+                border: 3px solid $secondary-color;
+                @media (max-width: $md) {
+                    border: 2px solid $secondary-color;
+                    width: 7px;
+                }
+            }
+            &.active {
+                border: 2px solid $yellow-color;
+                span {
+                    border: 1px solid $yellow-color;
+                }
+            }
+        }
+    }
+    &-item {
+        &-imagebox {
+            img {
+                height: 100svh;
+                object-fit: cover;
+            }
+        }
+        &-text {
+            position: absolute;
+            z-index: 2;
+            left: 0;
+            width: 100%;
+            bottom: 10rem;
+            min-height: 30%;
+            color: $secondary-color;
+            @media (max-width: $md) {
+                bottom: 5rem;
+            }
+            &-inner {
+                max-width: 750px;
+                @media (max-width: $lg) {
+                    max-width: 100%;
+                }
+            }
+            .minititle {
+                display: block;
+                font-size: 24px;
+                line-height: 32px;
+                text-transform: uppercase;
+                font-weight: 700;
+                margin-bottom: 1.5rem;
+                @media (max-width: $md) {
+                    font-size: 21px;
+                    line-height: 29px;
+                    margin-bottom: 1rem;
+                }
+            }
+            h1, h2 {
+                font-size: 100px;
+                letter-spacing: -1px;
+                line-height: 95px;
+                font-weight: 500;
+                margin-bottom: 1.5rem;
+                @media (max-width: $md) {
+                    font-size: 75px;
+                    line-height: 70px;
+                    margin-bottom: 1rem;
+                }
+                span {
+                    color: $yellow-color;
+                }
+            }
+            p {
+                font-size: 24px;
+                line-height: 32px;
+                font-weight: 400;
+                padding-right: 10rem;
+                @media (max-width: $lg) {
+                    padding-right: 0;
+                }
+                @media (max-width: $md) {
+                    font-size: 19px;
+                    line-height: 27px;
+                }
+            }
+        }
+    }
+}

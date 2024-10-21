@@ -1,0 +1,98 @@
+
+.navbar-toggler {
+    width: 43px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid $secondary-color;
+    transition: .15s;
+    padding: .25rem;
+    box-shadow: none !important;
+    @media (min-width: $lg) {
+        display: none;
+    }
+    &, .animated-icon span {
+    transition: background-color 0.25s;
+    }
+    &:hover, &.open {
+        background-color: $secondary-color;
+        .animated-icon span {
+            background-color: $primary-color;
+        }
+    }
+    .animated-icon {
+        width: 22px;
+        height: 22px;
+        margin: 0;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        cursor: pointer;
+        -webkit-transition: .5s ease-in-out;
+        -moz-transition: .5s ease-in-out;
+        -o-transition: .5s ease-in-out;
+        transition: .5s ease-in-out;
+        display: block;
+        span {
+            display: block;
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            border-radius: 0;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: .25s ease-in-out;
+            background: $secondary-color;
+            &:nth-child(1) {
+                top: 2px;
+            }
+            &:nth-child(2) {
+                top: 10px;
+            }
+            &:nth-child(3) {
+                top: 18px;
+            }
+        }
+    }
+    &.open .animated-icon span {
+        &:nth-child(1) {
+            top: 10px;
+            transform: rotate(135deg);
+        }
+        &:nth-child(2) {
+            opacity: 0;
+            left: -20px;
+        }
+        &:nth-child(3) {
+            top: 10px;
+            transform: rotate(-135deg);
+        }
+    }
+    @media (max-width: $sm) {
+        width: 35px;
+        .animated-icon {
+            width: 16px;
+            height: 20px;
+            span {
+                &:nth-child(1) {
+                    top: 3px;
+                }
+                &:nth-child(2) {
+                    top: 9px;
+                }
+                &:nth-child(3) {
+                    top: 15px;
+                }
+            }
+        }
+        &.open .animated-icon span {
+            &:nth-child(1), &:nth-child(3) {
+                top: 9px;
+            }
+        }
+    }
+}

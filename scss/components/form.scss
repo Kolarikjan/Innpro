@@ -1,0 +1,44 @@
+.form {
+    &-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+        &-2cols > label {
+            width: calc(50% - .5rem);
+        }
+    }
+    &-inputbox {
+        width: 100%;
+        input, select, textarea {
+            border: rem(1) solid $border-color;
+            border-radius: $button-radius;
+            padding: .875rem 1.25rem;
+            width: 100%;
+            transition: all ease-in-out .15s;
+        }
+        input, select {
+
+        }
+        textarea {
+            resize: none;
+            min-height: rem(190);
+        }
+    }
+    &-footer {
+        margin-top: 2rem;
+    }
+    &-dark {
+        input[type="text"], input[type="date"], input[type="email"], input[type="number"], select, textarea {
+            background-color: transparent;
+            border-color: $border-color-dark;
+            color: rgba($secondary-color, .375);
+            &:focus {
+                border-color: rgba($secondary-color, .6);
+                color: rgba($secondary-color, .6);
+            }
+        }
+    }
+}

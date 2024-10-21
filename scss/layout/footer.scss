@@ -1,0 +1,89 @@
+.footer {
+    background-image: url("../img/theme/footer-background.png");
+    background-color:$lightblack-color;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: right;
+    padding: 6rem 0 8rem;
+    &-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        @media (max-width: $lg) {
+            grid-template-columns: 1fr;
+        }
+    }
+    &-item {
+        h3 {
+            color: $secondary-color;
+            margin-bottom: 1.25rem;
+        }
+        p {
+            margin-bottom: 0;
+            &, strong, b {
+                color: rgba($secondary-color, .375);
+            }
+        }
+        &-subtitle {
+            color: $secondary-color !important;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: .5rem !important;
+        }
+    }
+    &-socials {
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 1rem;
+            a {
+                width: 42px;
+                aspect-ratio: 1/1;
+                border-radius: rem(7);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: rgba($secondary-color, .1);
+                transition: all ease-in-out .15s;
+                svg {
+                    fill: $secondary-color;
+                }
+                &:hover {
+                    background-color: $blue-color;
+                }
+            }
+        }
+    }
+    &-copyright {
+        p {
+            font-size: rem(13);
+            line-height: rem(22);
+            text-transform: uppercase;
+            &, a {
+                color: $tertiary-color;
+            }
+            a {
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            span {
+                display: inline-block;
+                @media (max-width: $md) {
+                    display: block;
+                }
+                &:not(:last-child) {
+                    &::after {
+                        content: "|";
+                        margin-left: .35rem;
+                        @media (max-width: $md) {
+                            content: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

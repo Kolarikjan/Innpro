@@ -1,0 +1,78 @@
+.navigation {
+    &-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        @media (max-width: $lg) {
+            grid-template-columns: 1fr;
+        }
+    }
+    &-item {
+        position: relative;
+        &-imagebox {
+            overflow: hidden;
+            img {
+                transition: .25s;
+                @media (max-width: $md) {
+                    aspect-ratio: 1.25/1;
+                    object-fit: cover;
+                    width: 100%;
+                }
+            }
+        }
+        &-inner {
+            position: absolute;
+            bottom: 2.5rem;
+            right: 3rem;
+            left: 3rem;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 1.25rem;
+            @media (max-width: $lg) {
+                flex-direction: column;
+                align-items: flex-start;
+                bottom: 1.5rem;
+                right: 1.5rem;
+                left: 1.5rem;
+                gap: .75rem;
+            }
+        }
+        &-text {
+            h3 {
+                font-size: 24px;
+                letter-spacing: 5px;
+                line-height: 32px;
+                text-transform: uppercase;
+                font-weight: 800;
+                margin-bottom: 2.5rem;
+                color: $secondary-color;
+                @media (max-width: $xl) {
+                    margin-bottom: 0;
+                }
+                @media (max-width: $md) {
+                    text-shadow: 0px 0px 13px #000;
+                }
+            }
+        }
+        &-button > * {
+            color: $secondary-color;
+            @media (max-width: $md) {
+                border-color: $secondary-color !important;
+                svg {
+                    fill: $secondary-color;
+                }
+            }
+        }
+        &:hover &-imagebox img {
+            transform: scale(1.1);
+        }
+        &:hover &-button > * {
+            background-color: $secondary-color;
+            color: $green-color !important;
+            border-color: $secondary-color;
+            svg {
+                fill: $green-color;
+            }
+        }
+    }
+}

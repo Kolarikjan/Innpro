@@ -1,0 +1,28 @@
+.about {
+    &-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem 5rem;
+        @media (max-width: $xl) {
+            gap: 3rem 4rem;
+        }
+        @media (max-width: $lg) {
+            grid-template-columns: 1fr;
+        }
+    }
+    &-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    &-imagebox {
+        @media (max-width: $lg) {
+            order: 1;
+        }
+        img {
+            min-height: 500px;
+            object-fit: cover;
+            width: fit-content;
+        }
+    }
+}

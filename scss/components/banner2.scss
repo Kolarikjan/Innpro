@@ -1,0 +1,172 @@
+.banner2 {
+    &-nav {
+        margin-bottom: 2.5rem;
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.25rem 2.75rem;
+            @media (max-width: $sm) {
+                flex-direction: column;
+            }
+            a {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                font-size: 15px;
+                letter-spacing: 1px;
+                line-height: 25px;
+                text-transform: uppercase;
+                color: $tertiary-color;
+                text-decoration: none;
+                transition-duration: .15s;
+                svg {
+                    fill: #c8c8c8;
+                    flex-shrink: 0;
+                }
+                span {
+                    position: relative;
+                    &::after {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        bottom: -1px;
+                        left: 0;
+                        height: 2px;
+                        width: 0;
+                        background-color: $green-color;
+                        transition: .15s;
+                    }
+                }
+                &:hover, &.active {
+                    font-weight: 700;
+                    color: $primary-color;
+                    svg {
+                        fill: $green-color;
+                    }
+                    span {
+                        &::after {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-owl {
+        position: relative;
+    }
+    &-item {
+        &-imagebox {
+            img {
+                aspect-ratio: 2.25/1;
+                @media (max-width: $lg) {
+                    aspect-ratio: 1.75/1;
+                }
+            }
+        }
+        &-textbox {
+            max-width: 550px;
+            @media (max-width: $lg) {
+                max-width: 100%;
+            }
+            h3 {
+                font-size: 24px;
+                letter-spacing: 5px;
+                line-height: 32px;
+                text-transform: uppercase;
+                font-weight: 800;
+                margin-bottom: .75rem;
+                color: $secondary-color;
+                @media (max-width: $md) {
+                    color: $primary-color;
+                }
+            }
+            p {
+                font-size: 18px;
+                line-height: 26px;
+                font-weight: 400;
+                margin-bottom: 0;
+                color: $secondary-color;
+                @media (max-width: $md) {
+                    color: $primary-color;
+                }
+            }
+        }
+        &-button a {
+            @media (min-width: $md) {
+                &:hover {
+                    background-color: $secondary-color;
+                    border-color: $secondary-color !important;
+                    color: $green-color !important;
+                }
+            }
+            @media (max-width: $md) {
+                color: $primary-color !important;
+                &:hover {
+                    color: $green-color !important;
+                }
+            }
+        }
+        &-inner {
+            position: absolute;
+            bottom: 2.5rem;
+            right: 2.5rem;
+            left: 2.5rem;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 1.25rem 2rem;
+            @media (max-width: $lg) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            @media (max-width: $md) {
+                position: unset;
+                margin-top: 2.5rem;
+                gap: 1.75rem 2rem;
+            }
+        }
+    }
+    .owl {
+        &-nav {
+            margin: 0;
+            @media (max-width: $md) {
+                display: none;
+            }
+        }
+        &-prev, &-next {
+            width: 46px;
+            aspect-ratio: 1/1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid $green-color !important;
+            border-radius: 50%;
+            transition: .15s;
+            svg {
+                fill: $green-color;
+                transition: .15s;
+            }
+            &:hover {
+                background-color: $green-color !important;
+                svg {
+                    fill: $secondary-color;
+                }
+            }
+        }
+        &-prev {
+            position: absolute;
+            top: 50%;
+            transform: translate(-100%, -50%);
+            left: -1.5rem;
+        }
+        &-next {
+            position: absolute;
+            top: 50%;
+            transform: translate(100%, -50%);
+            right: -1.5rem;
+        }
+    }
+}

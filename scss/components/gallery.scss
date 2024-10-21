@@ -1,0 +1,95 @@
+.gallery {
+    &-item {
+        display: block;
+        position: relative;
+        &::after {
+            position: absolute;
+            z-index: 2;
+            top: 100%;
+            left: 100%;
+            transform: translate(-50%,-50%);
+            content: url("../img/icon/icon-plus.svg");
+            background-color: $blue-color;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: rem(48);
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            scale: 0;
+            opacity: 0;
+            transition: all ease-in-out .15s;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            bottom: 0;
+            right: 0;
+            height: 0;
+            width: 0;
+            transition: all ease-in-out .15s;
+            background-color: $darkgrey-color;
+            opacity: .85;
+        }
+        &:hover {
+            &::after {
+                scale: 1;
+                opacity: 1;
+                top: 50%;
+                left: 50%;
+            }
+            &::before {
+                height: 100%;
+                width: 100%;
+            }
+        }
+        img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+        }
+    }
+    &-owl {
+        padding: 0 5rem;
+        .owl {
+            &-nav {
+                button {
+                    background-color: $secondary-color !important;
+                    border: rem(2) solid $blue-color !important;
+                    border-radius: 50%;
+                    width: rem(48);
+                    height: rem(48);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    &, svg {
+                        transition: all ease-in-out .15s;
+                    }
+                    svg {
+                        fill: $blue-color;
+                    }
+                    &:hover {
+                        background-color: $blue-color !important;
+                        svg {
+                            scale: 1.5;
+                            fill: $secondary-color;
+                        }
+                    }
+                }
+            }
+            &-next {
+                right: .575rem;
+            }
+            &-prev {
+                left: .575rem;
+                svg {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+/* 
+Theme name: Innpro
+Author: Jan Kolařík
+Author's url: www.kolarikjan.cz
+*/
+
+// Defaults
+@import "defaults/variables";
+@import "defaults/resets";
+@import "defaults/functions";
+@import "defaults/default";
+
+// Layouts
+@import "layout/header";
+@import "layout/body";
+@import "layout/footer";
+
+// Page Components
+@import "components/homepageSlider";
+@import "components/services";
+@import "components/gallery";
+@import "components/hamburger";
+@import "components/button";
+@import "components/news";
+@import "components/form";

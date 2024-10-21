@@ -1,0 +1,66 @@
+.services {
+    &-inner {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 3rem 5rem;
+    }
+    &-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+    &-item {
+        background-color: $secondary-color;
+        filter: drop-shadow(6.582px 6.138px 14.5px rgba(0,0,0,0.05));
+        padding: 2rem 2rem 2.5rem;
+        &-icon {
+            border: rem(2) solid $blue-color;
+            border-radius: $button-radius;
+            width: rem(62);
+            height: rem(62);
+            padding: 1rem;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            &, & svg {
+                transition: all ease-in-out .15s;
+            }
+            svg, img {
+                max-width: 100%;
+                object-fit: scale-down;
+                fill: $blue-color;
+            }
+        }
+        &:hover &-icon {
+            background-color: $blue-color;
+            svg {
+                fill: $secondary-color;
+            }
+        }
+        &-title {
+            display: block;
+            font-size: rem(24);
+            line-height: rem(32);
+            font-family: $font;
+            color: $primary-color;
+            font-weight: 700;
+            margin-bottom: .5rem;
+            position: relative;
+            width: fit-content;
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                bottom: -1px;
+                left: 0;
+                height: 3px;
+                width: 0;
+                background-color: $primary-color;
+                transition: all ease-in-out .15s;
+            }
+        }
+        &:hover &-title::after {
+            width: 100%;
+        }
+    }
+}
