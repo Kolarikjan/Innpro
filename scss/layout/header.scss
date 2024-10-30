@@ -8,6 +8,9 @@
             gap: 1.5rem;
             flex-wrap: nowrap;
             position: relative;
+            @media (max-width: $xl) {
+                gap: 1rem;
+            }
             @media (max-width: $xxl) and (min-width: $lg) {
                 flex-wrap: wrap;
             }
@@ -17,12 +20,18 @@
             @media (max-width: $xxl) {
                 order: 2;
             }
+            @media (max-width: $xl) {
+                margin-bottom: .75rem;
+            }
             @media (max-width: $lg) {
+                margin-bottom: 0;
                 position: absolute;
                 top: 100%;
                 left: 0;
                 width: 100%;
                 margin-top: 1rem;
+                z-index: 5;
+                background-color: rgba($blue-color, .95);
             }
             ul {
                 display: flex;
@@ -34,7 +43,6 @@
                     justify-content: flex-start;
                 }
                 @media (max-width: $lg) {
-                    background-color: rgba($primary-color, .75);
                     flex-direction: column;
                     padding: 1.5rem;
                 }
@@ -46,6 +54,9 @@
                 font-weight: bold;
                 position: relative;
                 transition: .15s;
+                @media (max-width: $lg) {
+                    color: $secondary-color;
+                }
                 &::after {
                     content: "";
                     display: block;
@@ -56,10 +67,16 @@
                     width: 0;
                     background-color: $blue-color;
                     transition: .15s;
+                    @media (max-width: $lg) {
+                        background-color: $secondary-color;
+                    }
                 }
                 &:hover, &.active {
                     text-decoration: none;
                     color: $blue-color;
+                    @media (max-width: $lg) {
+                        color: $secondary-color;
+                    }
                     &::after {
                         width: 100%;
                     }
@@ -72,6 +89,14 @@
             gap: 1.25rem;
             border-left: rem(1) solid $border-color;
             padding: .75rem 0 .75rem 2rem;
+            @media (max-width: $xl) {
+                margin-left: auto;
+            }
+            @media (max-width: $lg) {
+                margin-left: 0;
+                padding: 0 1.5rem 1.5rem;
+                border-left: 0;
+            }
             &-icon {
                 border: rem(2) solid $blue-color;
                 border-radius: 50%;
@@ -81,9 +106,15 @@
                 padding: .75rem;
                 width: rem(48);
                 height: rem(48);
+                @media (max-width: $lg) {
+                    border-color: $secondary-color;
+                }
                 img, svg {
                     object-fit: scale-down;
                     margin-right: rem(-2);
+                    @media (max-width: $lg) {
+                        filter: brightness(0) invert(1);
+                    }
                 }
             }
             &-content {
@@ -91,10 +122,16 @@
                     display: block;
                     font-weight: 600;
                     line-height: 1.35;
+                    @media (max-width: $lg) {
+                        color: $secondary-color;
+                    }
                 }
             }
             &-phone {
                 color: $primary-color;
+                @media (max-width: $lg) {
+                    color: $secondary-color;
+                }
             }
         }
     }

@@ -2,12 +2,27 @@
     &-inner {
         display: grid;
         grid-template-columns: 1fr 2fr;
-        gap: 3rem 5rem;
+        gap: 3.5rem 5rem;
+        @media (max-width: $xxl) {
+            grid-template-columns: 1fr;
+        }
     }
     &-wrapper {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 3rem;
+        @media (max-width: $lg) {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        @media (max-width: $sm) {
+            gap: 1rem;
+        }
+    }
+    &-text {
+        @media (max-width: $lg) {
+            text-align: center;
+        }
     }
     &-item {
         background-color: $secondary-color;
@@ -22,6 +37,11 @@
             margin-bottom: 1.25rem;
             display: flex;
             align-items: center;
+            @media (max-width: $lg) {
+                width: fit-content;
+                margin-left: auto;
+                margin-right: auto;
+            }
             &, & svg {
                 transition: all ease-in-out .15s;
             }
@@ -47,6 +67,10 @@
             margin-bottom: .5rem;
             position: relative;
             width: fit-content;
+            @media (max-width: $lg) {
+                margin-left: auto;
+                margin-right: auto;
+            }
             &::after {
                 content: "";
                 display: block;
@@ -61,6 +85,11 @@
         }
         &:hover &-title::after {
             width: 100%;
+        }
+        p {
+            @media (max-width: $lg) {
+                text-align: center;
+            }
         }
     }
 }

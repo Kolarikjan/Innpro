@@ -5,12 +5,20 @@
     background-size: auto 100%;
     background-position: right;
     padding: 6rem 0 8rem;
+    @media (max-width: $lg) {
+        padding: 4.5rem 0;
+        background-image: url("../img/theme/footer-background-mobile.png");
+    }
     &-wrapper {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 3rem;
         @media (max-width: $lg) {
             grid-template-columns: 1fr;
+            gap: 4.5rem;
+            & > div:first-child {
+                order: 1;
+            }
         }
     }
     &-item {
@@ -60,8 +68,14 @@
             font-size: rem(13);
             line-height: rem(22);
             text-transform: uppercase;
+            @media (max-width: $md) {
+                line-height: rem(28);
+            }
             &, a {
                 color: $tertiary-color;
+                @media (max-width: $lg) {
+                    color: rgba($secondary-color, .375);
+                }
             }
             a {
                 text-decoration: none;

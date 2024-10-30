@@ -32,7 +32,19 @@ $(document).ready(function () {
         dots: false,
         responsive: {
             0: {
-
+                items: 1,
+                stagePadding: 50
+            },
+            400: {
+                items: 1,
+                stagePadding: 75
+            },
+            576: {
+                items: 2,
+                stagePadding: 0
+            },
+            1200: {
+                items: 3
             },
             1475: {
                 items: 4

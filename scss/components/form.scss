@@ -8,6 +8,9 @@
         }
         &-2cols > label {
             width: calc(50% - .5rem);
+            @media (max-width: $sm) {
+                width: 100%;
+            }
         }
     }
     &-inputbox {

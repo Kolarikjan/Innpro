@@ -1,20 +1,18 @@
 
-.navbar-toggler {
-    width: 43px;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
+.navbar-toggle {
+    width: 36px;
+    height: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid $secondary-color;
     transition: .15s;
-    padding: .25rem;
+    padding: 0;
     box-shadow: none !important;
     @media (min-width: $lg) {
         display: none;
     }
     &, .animated-icon span {
-    transition: background-color 0.25s;
+        transition: background-color 0.25s;
     }
     &:hover, &.open {
         background-color: $secondary-color;
@@ -23,8 +21,8 @@
         }
     }
     .animated-icon {
-        width: 22px;
-        height: 22px;
+        width: 36px;
+        height: 36px;
         margin: 0;
         -webkit-transform: rotate(0deg);
         -moz-transform: rotate(0deg);
@@ -46,21 +44,21 @@
             left: 0;
             transform: rotate(0deg);
             transition: .25s ease-in-out;
-            background: $secondary-color;
+            background: $primary-color;
             &:nth-child(1) {
-                top: 2px;
+                top: 4px;
             }
             &:nth-child(2) {
-                top: 10px;
+                top: 16px;
             }
             &:nth-child(3) {
-                top: 18px;
+                top: 30px;
             }
         }
     }
     &.open .animated-icon span {
         &:nth-child(1) {
-            top: 10px;
+            top: 17px;
             transform: rotate(135deg);
         }
         &:nth-child(2) {
@@ -68,31 +66,8 @@
             left: -20px;
         }
         &:nth-child(3) {
-            top: 10px;
+            top: 17px;
             transform: rotate(-135deg);
-        }
-    }
-    @media (max-width: $sm) {
-        width: 35px;
-        .animated-icon {
-            width: 16px;
-            height: 20px;
-            span {
-                &:nth-child(1) {
-                    top: 3px;
-                }
-                &:nth-child(2) {
-                    top: 9px;
-                }
-                &:nth-child(3) {
-                    top: 15px;
-                }
-            }
-        }
-        &.open .animated-icon span {
-            &:nth-child(1), &:nth-child(3) {
-                top: 9px;
-            }
         }
     }
 }
